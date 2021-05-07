@@ -1,22 +1,21 @@
-const first = +prompt("введите первое валидное число");
-const second = +prompt("введите второе валидное число");
-
 function isValidNumber(num) {
     if (!Number.isInteger(num)) return false;
     if (num <= 0) return false;
     return true
 }
 
-function twoNumbers(a,b) {
-    if (!isValidNumber(a)) {
+function twoNumbers() {
+    const first = +prompt("введите первое валидное число");
+    if (!isValidNumber(first)) {
         alert("Некорректный ввод!");
         return false
-    } else if (!isValidNumber(b)) {
-        alert("Некорректный ввод!");
-        return false
-    } else {
-        alert(`Ответ: ${a+b}, ${a/b}.`)
     }
+    const second = +prompt("введите второе валидное число");
+    if (!isValidNumber(second)) {
+        alert("Некорректный ввод!");
+        return false
+    }
+    alert(`Ответ: ${a + b}, ${a / b}.`)
 }
 
-twoNumbers(first, second);
+twoNumbers()
