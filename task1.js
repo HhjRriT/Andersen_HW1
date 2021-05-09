@@ -13,9 +13,9 @@ function twoNumb(a, b) {
     const parsedA = parseInt(a);
     const parsedB = parseInt(b);
     if (isValidNumber(parsedA) && isValidIndex(parsedB)) {
-        alert((parsedA >>> 0).toString(parsedB));
+        console.log((parsedA >>> 0).toString(parsedB));
     } else {
-        alert("Некорректный ввод!")
+        console.log("Некорректный ввод!")
     }
 }
 
