@@ -1,22 +1,19 @@
-const number = +prompt("введите первое валидное число >0");
-const index = +prompt("введите второе валидное число (2-36");
+const number = prompt("введите первое валидное число");
+const index = prompt("введите второе валидное число (2-36");
 
 function isValidNumber(num) {
-    if (!Number.isInteger(num)) return false;
-    if (num <= 0) return false;
-    return true
+    return !isNaN(num) && num <= Number.MAX_SAFE_INTEGER && num >= Number.MIN_SAFE_INTEGER
 }
 
 function isValidIndex(index) {
-    if (!Number.isInteger(index)) return false;
-    if (index < 2 && index > 36) return false;
-    return true
+    return !isNaN(index) && ((index >= 2 && index <= 36))
 }
 
 function twoNumb(a, b) {
-    if (isValidNumber(number) && isValidIndex(index)) {
-        alert(a.toString(b));
-        return true
+    const parsedA = parseInt(a);
+    const parsedB = parseInt(b);
+    if (isValidNumber(parsedA) && isValidIndex(parsedB)) {
+        alert((parsedA >>> 0).toString(parsedB));
     } else {
         alert("Некорректный ввод!")
     }

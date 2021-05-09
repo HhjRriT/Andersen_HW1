@@ -1,21 +1,16 @@
-function isValidNumber(num) {
-    if (!Number.isInteger(num)) return false;
-    if (num <= 0) return false;
-    return true
-}
-
 function twoNumbers() {
-    const first = +prompt("введите первое валидное число");
-    if (!isValidNumber(first)) {
+    const first = parseInt(prompt("введите первое валидное число"));
+    if (isNaN(first)) {
         alert("Некорректный ввод!");
-        return false
+        return false;
     }
-    const second = +prompt("введите второе валидное число");
-    if (!isValidNumber(second)) {
+    const second = parseInt(prompt("введите второе валидное число"));
+    if (isNaN(second) || second === 0) {
         alert("Некорректный ввод!");
-        return false
+        return false;
     }
-    alert(`Ответ: ${a + b}, ${a / b}.`)
+    alert(`Ответ: ${first + second}, ${first / second}.`);
+    return true
 }
 
 twoNumbers()
